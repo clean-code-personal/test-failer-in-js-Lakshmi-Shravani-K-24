@@ -17,7 +17,7 @@ jobs:
         run:  sudo npm install
       
       - name: tshirts fail
-        run: bash .github/workflows/expectfail.sh "node tshirts.js"
+        run: bash .github/workflows/expectfail.sh "node tshirtsTest.js"
 
       - name: misaligned fail
         run: bash .github/workflows/expectfail.sh "node misaligned.js"
