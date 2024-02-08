@@ -7,25 +7,37 @@ function colorMapTest() {
   const majorColorArray = [...majorColors];
   const minorColorArray = [...minorColors];
   const maxSizeOfColorPair = majorColorArray.length * minorColorArray.length;
-  expect(colorMapLines.length).equals(maxSizeOfColorPair); //fails
+  expect(colorMapLines.length).equals(maxSizeOfColorPair);
+
+  let majorIndex = 0;
+  let minorIndex = 0;
+
   colorMapLines.forEach((pair, zeroBasedPairNumber) => {
     const parts = pair.split("|");
     const pairNumber = zeroBasedPairNumber + 1;
     const majorColor = parts[1].trim().split(",")[0];
     const minorColor = parts[2].trim().split(",")[0];
+    // Test pair number presence
     console.assert(
       pair.includes(`${pairNumber}`),
       `Pair ${pairNumber} not found`
-    ); //fails
-    console.assert(
-      majorColor.includes(majorColor),
-      `Major color ${majorColor} not found`
     );
+
+    // Test major color
     console.assert(
-      minorColor.includes(minorColor),
-      `Minor color ${minorColor} not found`
+      majorColor === majorColorArray[majorIndex],
+      `Major color ${majorColor} not found or in wrong order`
     );
+    majorIndex = parseInt(pairNumber / minorColorArray.length);
+
+    // Test minor color
+    console.assert(
+      minorColor === minorColorArray[minorIndex],
+      `Minor color ${minorColor} not found or in wrong order`
+    );
+    minorIndex = (minorIndex + 1) % minorColorArray.length;
   });
-  console.log("All is well (maybe!)");
+
+  console.log("All is well!");
 }
 colorMapTest();
