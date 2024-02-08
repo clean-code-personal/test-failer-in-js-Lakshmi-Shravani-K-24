@@ -18,6 +18,7 @@ function colorMapTest() {
     //Test seperators alignment
     expect(parts[0].trim()).to.equal("");
     expect(parts[1].trim()).to.equal("");
+    
     // Test pair number presence
     console.assert(
       pair.includes(`${pairNumber}`),
