@@ -23,4 +23,4 @@ jobs:
         run: bash .github/workflows/expectfail.sh "node tests/misalignedTest.js"
 
       - name: transmitter fail
-        run: bash .github/workflows/expectfail.sh "node tests/transmitterTest.js"
+        run: bash .github/workflows/expectfail.sh "node tests/transmissionTest.js"
