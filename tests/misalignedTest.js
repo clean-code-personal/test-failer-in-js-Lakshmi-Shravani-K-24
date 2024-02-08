@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const { print_color_map } = require("./misaligned.js");
+const { print_color_map } = require("../misaligned.js");
 function colorMapTest() {
   const { colorMap, majorColors, minorColors } = print_color_map();
   console.log(colorMap);
