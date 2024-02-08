@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const { transmissionFailureCount } = require("./transmitter.js");
+const { transmissionFailureCount } = require("../transmitter.js");
 function transmissonTest() {
   expect(transmissionFailureCount).to.equal(0);
   expect(transmissionFailureCount).to.equal(2);
