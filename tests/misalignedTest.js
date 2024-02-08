@@ -8,10 +8,8 @@ function colorMapTest() {
   const minorColorArray = [...minorColors];
   const maxSizeOfColorPair = majorColorArray.length * minorColorArray.length;
   expect(colorMapLines.length).equals(maxSizeOfColorPair);
-
   let majorIndex = 0;
   let minorIndex = 0;
-
   colorMapLines.forEach((pair, zeroBasedPairNumber) => {
     const parts = pair.split("|");
     const pairNumber = zeroBasedPairNumber + 1;
@@ -25,7 +23,6 @@ function colorMapTest() {
       pair.includes(`${pairNumber}`),
       `Pair ${pairNumber} not found`
     );
-
     // Test major color
     console.assert(
       majorColor === majorColorArray[majorIndex],
@@ -40,7 +37,6 @@ function colorMapTest() {
     );
     minorIndex = (minorIndex + 1) % minorColorArray.length;
   });
-
   console.log("All is well!");
 }
 colorMapTest();
