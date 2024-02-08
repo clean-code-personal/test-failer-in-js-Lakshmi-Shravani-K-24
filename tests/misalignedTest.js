@@ -17,6 +17,9 @@ function colorMapTest() {
     const pairNumber = zeroBasedPairNumber + 1;
     const majorColor = parts[1].trim().split(",")[0];
     const minorColor = parts[2].trim().split(",")[0];
+    //Test seperators alignment
+    expect(parts[0].trim()).to.equal("");
+    expect(parts[1].trim()).to.equal("");
     // Test pair number presence
     console.assert(
       pair.includes(`${pairNumber}`),
