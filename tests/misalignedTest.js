@@ -7,7 +7,6 @@ function colorMapTest() {
   const majorColorArray = [...majorColors];
   const minorColorArray = [...minorColors];
   const maxSizeOfColorPair = majorColorArray.length * minorColorArray.length;
-  expect(colorMapLines.length).equals(25); //fails
   expect(colorMapLines.length).equals(maxSizeOfColorPair); //fails
   colorMapLines.forEach((pair, zeroBasedPairNumber) => {
     const parts = pair.split("|");
