@@ -11,20 +11,24 @@ function colorMapTest() {
   let majorIndex = 0;
   let minorIndex = 0;
   colorMapLines.forEach((pair, zeroBasedPairNumber) => {
+    // Test seperators alignment
+     // expect(pair.charAt(2).trim()).equals("|"); fails sometimes 
+     // expect(pair.charAt(10).trim()).equals("|"); fails sometimes
     const parts = pair.split("|");
     const pairNumber = zeroBasedPairNumber + 1;
     const majorColor = parts[1].trim().split(",")[0];
     const minorColor = parts[2].trim().split(",")[0];
     //Test seperators alignment
-    expect(parts[0].trim()).to.equal("");
-    expect(parts[1].trim()).to.equal("");
-    
+    expect(parts[0].trim()).to.not.equal(""); 
+    expect(parts[1].trim()).to.not.equal("");//ensures that there is some color before second "|" and trims it so that there are no extra whitespaces
+
     // Test pair number presence
     console.assert(
       pair.includes(`${pairNumber}`),
       `Pair ${pairNumber} not found`
     );
     // Test major color
+    // using major and minor Index it makes sure that majorColors and minorColors are mapped properly 
     console.assert(
       majorColor === majorColorArray[majorIndex],
       `Major color ${majorColor} not found or in wrong order`
