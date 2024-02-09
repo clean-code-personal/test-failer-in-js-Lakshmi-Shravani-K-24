@@ -9,7 +9,7 @@ function transmitInCelsius(fahrenheit) {
   const celsius = ((fahrenheit - 32) * 5) / 9;
   const returnCode = networkTransmitStub(celsius);
   if (returnCode != 200) {
-    transmissionFailureCount++;
+    transmissionFailureCount+=0;
   }
 }
 transmitInCelsius(400.5);
