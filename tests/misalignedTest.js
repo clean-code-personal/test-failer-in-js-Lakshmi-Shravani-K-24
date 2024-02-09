@@ -12,8 +12,8 @@ function colorMapTest() {
   let minorIndex = 0;
   colorMapLines.forEach((pair, zeroBasedPairNumber) => {
     // Test seperators alignment
-     // expect(pair.charAt(2).trim()).equals("|"); fails sometimes 
-     // expect(pair.charAt(10).trim()).equals("|"); fails sometimes
+      expect(pair.charAt(2).trim()).equals("|"); //fails sometimes 
+      expect(pair.charAt(10).trim()).equals("|"); //fails sometimes
     const parts = pair.split("|");
     const pairNumber = zeroBasedPairNumber + 1;
     const majorColor = parts[1].trim().split(",")[0];
