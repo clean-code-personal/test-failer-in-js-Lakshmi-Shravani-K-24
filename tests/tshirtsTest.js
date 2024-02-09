@@ -1,9 +1,9 @@
 const { expect } = require("chai");
 const { size } = require("../tshirts.js");
 function sizeTest() {
-  expect(size(38)).equals("M"); //fails
-  expect(size(38)).to.not.equal("L"); //fails
-  expect(size(42)).equals("M"); //fails
+  expect(size(38)).equals("M"); 
+  expect(size(38)).to.not.equal("L"); 
+  expect(size(42)).equals("L"); 
   expect(size(37)).equals("S");
   expect(size(40)).equals("M");
   expect(size(43)).equals("L");
