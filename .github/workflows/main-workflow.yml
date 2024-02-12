@@ -16,11 +16,11 @@ jobs:
       - name: Install Dependncies
         run:  sudo npm install
       
-      - name: tshirts fail
+      - name: tshirts pass
         run: "node tests/tshirtsTest.js"
 
-      - name: misaligned fail
+      - name: misaligned pass
         run:  "node tests/misalignedTest.js"
 
-      - name: transmitter fail
+      - name: transmitter pass
         run: "node tests/transmissionTest.js"
